@@ -19,6 +19,7 @@ const ActionButtons = () => {
   const [user, setUser] = useState<{ name: string; email: string; role: string } | null>(null);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -52,8 +53,8 @@ const ActionButtons = () => {
   return (
     <div className="flex place-items-center">
       <div className="md:hidden">
-        <Sheet>
-          <SheetTrigger>
+        <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
+          <SheetTrigger onClick={() => setSheetOpen(true)}>
             <LuAlignJustify />
           </SheetTrigger>
           <SheetContent>
@@ -97,7 +98,7 @@ const ActionButtons = () => {
                         <Link href={"/change-password"} className="w-full text-left py-2 px-4 bg-blue-50 text-blue-700 rounded-md shadow hover:bg-blue-100 focus:outline-none">
                           Change Password
                         </Link>
-                        <button onClick={(e) => { e.stopPropagation(); setShowLogoutConfirm(true); }} className="w-full text-left py-2 px-4 bg-red-50 text-red-600 rounded-md shadow hover:bg-red-100 focus:outline-none">
+                        <button onClick={() => { setSheetOpen(false); setTimeout(() => setShowLogoutConfirm(true), 150); }} className="w-full text-left py-2 px-4 bg-red-50 text-red-600 rounded-md shadow hover:bg-red-100 focus:outline-none">
                           Logout
                         </button>
                       </>
