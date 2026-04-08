@@ -97,7 +97,7 @@ const ActionButtons = () => {
                         <Link href={"/change-password"} className="w-full text-left py-2 px-4 bg-blue-50 text-blue-700 rounded-md shadow hover:bg-blue-100 focus:outline-none">
                           Change Password
                         </Link>
-                        <button onClick={() => setShowLogoutConfirm(true)} className="w-full text-left py-2 px-4 bg-red-50 text-red-600 rounded-md shadow hover:bg-red-100 focus:outline-none">
+                        <button onClick={(e) => { e.stopPropagation(); setShowLogoutConfirm(true); }} className="w-full text-left py-2 px-4 bg-red-50 text-red-600 rounded-md shadow hover:bg-red-100 focus:outline-none">
                           Logout
                         </button>
                       </>
@@ -157,15 +157,27 @@ const ActionButtons = () => {
       </div>
 
       {mounted && showLogoutConfirm && createPortal(
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
+        <div
+          className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/40 backdrop-blur-sm"
+          onMouseDown={(e) => e.stopPropagation()}
+          onClick={(e) => e.stopPropagation()}
+        >
           <div className="bg-white rounded-xl shadow-xl p-6 w-80 mx-4">
             <h2 className="text-lg font-semibold text-gray-800 mb-1">Logout</h2>
             <p className="text-sm text-gray-500 mb-5">Are you sure you want to logout?</p>
             <div className="flex gap-3 justify-end">
-              <button onClick={() => setShowLogoutConfirm(false)} className="px-4 py-2 text-sm rounded-md border border-gray-200 text-gray-600 hover:bg-gray-50 transition">
+              <button
+                onMouseDown={(e) => e.stopPropagation()}
+                onClick={(e) => { e.stopPropagation(); setShowLogoutConfirm(false); }}
+                className="px-4 py-2 text-sm rounded-md border border-gray-200 text-gray-600 hover:bg-gray-50 transition"
+              >
                 Cancel
               </button>
-              <button onClick={() => { setShowLogoutConfirm(false); handleLogout(); }} className="px-4 py-2 text-sm rounded-md bg-red-600 text-white hover:bg-red-700 transition">
+              <button
+                onMouseDown={(e) => e.stopPropagation()}
+                onClick={(e) => { e.stopPropagation(); setShowLogoutConfirm(false); handleLogout(); }}
+                className="px-4 py-2 text-sm rounded-md bg-red-600 text-white hover:bg-red-700 transition"
+              >
                 Logout
               </button>
             </div>
