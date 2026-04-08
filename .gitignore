@@ -36,4 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # excluded features
-/src/app/finsensor-connect
+
