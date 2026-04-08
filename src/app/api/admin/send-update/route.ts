@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import PersonalInformation from "@/models/PersonalInformation";
+import User from "@/models/User";
 import EmailLog from "@/models/EmailLog";
 import { getSession } from "@/lib/auth";
 import { sendUpdateEmail } from "@/lib/email";
@@ -31,6 +32,10 @@ export async function POST(req: NextRequest) {
 
     await connectDB();
 
+    // Get admin emails to exclude
+    const adminUsers = await User.find({ role: "admin" }).select("email").lean();
+    const adminEmails = adminUsers.map((u) => u.email.toLowerCase());
+
     let users: { firstName: string; emailId: string }[] = [];
     if (recipients === "all") {
       users = await PersonalInformation.find({ emailId: { $exists: true, $ne: "" } }).select("firstName emailId").lean() as { firstName: string; emailId: string }[];
@@ -38,10 +43,20 @@ export async function POST(req: NextRequest) {
       users = await PersonalInformation.find({ _id: { $in: recipients } }).select("firstName emailId").lean() as { firstName: string; emailId: string }[];
     }
 
-    if (users.length === 0) return NextResponse.json({ message: "No recipients found" }, { status: 400 });
+    // Filter out admin emails and deduplicate
+    const uniqueEmails = new Set<string>();
+    const filteredUsers = users.filter((u) => {
+      const email = u.emailId.toLowerCase();
+      if (adminEmails.includes(email)) return false; // Exclude admins
+      if (uniqueEmails.has(email)) return false; // Exclude duplicates
+      uniqueEmails.add(email);
+      return true;
+    });
+
+    if (filteredUsers.length === 0) return NextResponse.json({ message: "No recipients found" }, { status: 400 });
 
     const results = await Promise.allSettled(
-      users.map((u) => sendUpdateEmail(u.emailId, u.firstName || "User", subject, content))
+      filteredUsers.map((u) => sendUpdateEmail(u.emailId, u.firstName || "User", subject, content))
     );
 
     const sent = results.filter((r) => r.status === "fulfilled").length;
@@ -52,7 +67,7 @@ export async function POST(req: NextRequest) {
       content,
       sentTo: recipients === "all" ? "all" : "selected",
       recipientCount: sent,
-      recipients: users.map((u) => u.emailId),
+      recipients: filteredUsers.map((u) => u.emailId),
     });
 
     return NextResponse.json({ message: `Sent: ${sent}`, sent }, { status: 200 });
