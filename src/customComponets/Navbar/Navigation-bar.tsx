@@ -83,14 +83,7 @@ export function NavigationBar() {
             <NavigationMenuLink onClick={handleClick} className={cn(navigationMenuTriggerStyle(), "")}>Leaders</NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        {!isAdmin && (
-          <NavigationMenuItem>
-            <Link href="/finsensor-connect" legacyBehavior passHref>
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "")}>FinSensorConnect</NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        )}
-        <NavigationMenuItem>
+         <NavigationMenuItem>
           <Link href="/about-us" legacyBehavior passHref>
             <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "")}>About us</NavigationMenuLink>
           </Link>
@@ -100,6 +93,14 @@ export function NavigationBar() {
             <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "")}>Contact us</NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+        {!isAdmin && (
+          <NavigationMenuItem>
+            <Link href="/finsensor-connect" legacyBehavior passHref>
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "")}>FinSensorConnect</NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        )}
+       
       </NavigationMenuList>
     </NavigationMenu>
   );
