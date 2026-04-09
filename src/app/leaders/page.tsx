@@ -11,75 +11,68 @@ import Link from "next/link";
 const Leaders = [
   {
     name: "Amit Garg",
-    title: "Audit & IPO Advisor",
+    title: "Chief Executive Office",
     tag: "CEO",
     image: Amit,
-    description: `Amit is a part of assurance team. He has over 18 years of experience 
-      of consulting and audit in varied industrial sectors. He is a mature 
-      professional who understands the local market and is appreciated by 
-      his clients for his advice in business matters.          
-      He has also worked with E&Y for more than 12 years in statutory audit 
-      practice.          
-      He is a fellow member of the Institute of Chartered Accountants of 
-      India "ICAI". He specializes in Ind AS/IFRS implementations, statutory 
-      audit, internal audit, process reviews, due diligence. He has very good 
-      project management skills having led large projects which involved  
-      multi-disciplinary teams and worked against tight deadlines.          
-      Amit also has rich experience in handling capital market transactions.          
-      In addition to above, Amit is also faculty for IFRS/Ind AS course 
-      conducted by Institute of Chartered Accountants of India, Delhi 
-      University and large consulting firms.`,
+    description: `Amit Garg is a Chartered Accountant with over 20 years of experience in Ind AS/IFRS implementations, statutory audit, internal audit, process reviews, and due diligence. He is a seasoned and mature professional. He has previously worked in EY for more than 12 years in its audit and assurance division. He handled large multi-disciplinary projects, internal control reviews, capital market transactions and complex group level audits. 
+
+He brings deep domain expertise to the design and implementation of financial reporting software that meets complex accounting and regulatory requirements, including Ind AS and IFRS standards. 
+
+He understands the real-world needs of preparers, auditors, and CFOs, and is widely appreciated by clients and professionals for his pragmatic, business-oriented advice.  
+
+Complementing his practice experience, Amit is also a faculty member   for IFRS/Ind AS courses conducted by ICAI, Delhi University and corporates. 
+
+Leveraging this unique blend of technical knowledge, audit practice insight, and training experience, he has conceptualised and developed a suite of software tools for financial statement consolidation, lease accounting and reporting automation. As CEO, he leads the vision and product strategy of the company, ensuring that the software is user-friendly, technically robust, and aligned with evolving accounting standards and audit expectations. 
+
+ `,
   },
   {
     name: "Saurabh Aggarwal",
     tag: "Director",
-    title: "Audit & Compliance Specialist",
+    title: "Chief Product Officer ",
     image: Saurabh,
-    description: `Saurabh is a part of assurance team. He has over 10 years of 
-      professional experience in Assurance and Advisory Services. He 
-      has extensive experience in IFRS, Ind AS, IGAAP, special audits, 
-      IFRS transition, ICFR, SOX Testing, Business Process re-
-      engineering, tax audits, Capital Market transactions, and due 
-      diligence.            
-      Saurabh has worked with S.R.Batliboi & Co. LLP (member firm of 
-      EY) and BSR & Co. LLP (member firm of KPMG) over a decade.          
-      During his stint at EY and KPMG, he has served a diversified 
-      clientele spanning across sectors. He was handling public 
-      companies and large multinational corporations during his tenure.          
-      Saurabh has worked in Automotive, FMCG, Cement and other 
-      sectors.
-      Saurabh has also handled capital market transaction of JK 
-      Cements Limited.`,
+    description: `Saurabh Aggarwal is a Chartered Accountant with over 16 years of experience in Ind AS/IFRS implementations, statutory audit, internal audit, process reviews, and due diligence. He is a seasoned and mature professional. He has also served at S.R. Batliboi & Co. LLP (member firm of EY) and BSR & Co. LLP (member firm of KPMG) for more than 11 years, where he handled a diversified clientele across sectors including automotive, FMCG, cement, and other large industry segments.  
+
+He has extensive experience in IFRS, Ind AS, Indian GAAP, special audits, IFRS transition, ICFR, SOX testing, business process re-engineering, tax audits, capital market transactions, and due diligence. 
+
+He combines deep accounting practice knowledge with a strong product vision mindset to shape software that meets the needs of auditors, CFOs, and regulatory reporting teams. 
+
+Leveraging this hands-on experience, Saurabh is now involved with FinSensor in the development of a comprehensive suite of software for financial statement consolidation, lease accounting and related reporting automation.  `,
   },
   {
     name: "Prashant Jha",
     tag: "Director",
-    title: "Tax & Regulatory Advisor",
+    title: "Chief Operations Officer ",
     image: Prashant,
-    description: `Prashant Jha is a Chartered accountant and leads Tax and Regulatory 
-      advisory. Prashant has 10+ years of professional experience in taxation, 
-      Assurance and Regulatory advisory and is known for his technical 
-      expertise. He has worked with S. R Batliboi & Co. LLP (EY) and served 
-      clients in real estate, aviation, healthcare, etc. He specializes in 
-      financial statement review from tax perspective, GST audit, litigations, 
-      direct taxes, etc.`,
+    description: `Prashant is a Chartered Accountant with over 12 years of experience in taxation, assurance, and regulatory advisory. He is renowned for his technical prowess in financial reporting, consolidations and taxation. 
+
+Prashant previously worked for more than three years at S. R. Batliboi & Co. LLP (an EY member firm), serving diverse clients including listed corporates, leading real estate developers, and players in steel, fertilizer, aviation, healthcare, and services. A seasoned professional with deep insight into the Indian market, he earns client praise for practical guidance on business and compliance challenges. With exceptional project management skills, he has led large-scale implementations involving cross-functional teams, delivering against tight deadlines for high-stakes consolidations. 
+
+Prashant ensures in leveraging our financial statements consolidation software from the consolidated financials and process optimizations perspective.  `,
   },
   {
     name: "Gaurav Malik",
     tag: "Technology Lead",
     title: "Financial Planning & Analysis",
     image: Gaurav,
-    description: `8+ years of experience in Financial Planning and Analysis, Data Analytics with organizations like EY, Vedanta Limited, Kotak Mahindra Bank Limited & other global MNCs. Handled Budgeting, Margin/Profitability Analysis, Financial modelling, Credit Rating, Due Diligence, Internal Management Reporting, External reporting like investor presentation, press release and Annual reports.`,
+    description: `Gaurav Malik is a Chartered Accountants by profession and carries over 10 years of experience in Financial Planning & Analysis (FP&A) and data analytics at leading organizations including EY, Vedanta Limited, Kotak Mahindra Bank Limited, and other global MNCs. He brings proven expertise to FinSensor's financial statements consolidation platform. 
+
+He has spearheaded budgeting and forecasting for complex, multi-entity groups; conducted margin and profitability analysis across consolidated structures; and built advanced financial models. Key contributions include internal management reporting automation and external deliverables like investor presentations, press releases, and annual reports. 
+
+At FinSensor, Gaurav empowers clients to transform fragmented financial data into actionable insights, driving efficiency in group-wide reporting and strategic decision-making. `,
   },
   {
     name: "Abhinav Aggarwal",
     tag: "Technology Lead",
     title: "Business Transformation",
     image: Abhinav,
-    description: `8+ years of experience in Financial Planning and Analysis, Business transformation & Tool Implementation with organizations like Infosys Limited, Sumitomo & other global MNCs. Handled Finance Transformation Projects, ERP & FP&A Tool Implementations, Process Improvement & Business Analytics projects.`,
+    description: `Abhinav Aggarwal is a Chartered Accountant by profession with more than 10 years of experience in Financial Planning & Analysis (FP&A), business transformation, and automation implementation at organizations like Infosys Limited, Sumitomo, and other global MNCs, Abhinav excels in driving consolidation efficiency at FinSensor. 
+
+They have led finance transformation projects, ERP and FP&A tool implementations, process improvements, and business analytics initiatives—focusing on streamlining multi-entity consolidations, intercompany reconciliations, and real-time group reporting. Proficient in scalable analytics, delivering measurable ROI through automation and data-driven insights. 
+
+At FinSensor, Abhinav helps clients accelerate their finance digital journey, transforming complex consolidations into agile, compliant operations. `,
   },
 ];
-
 export default function OurLeaders() {
   return (
     <section
